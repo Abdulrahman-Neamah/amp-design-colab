@@ -71,8 +71,9 @@ No data is included. The pipeline reads a CSV with these columns:
 
 I used **GRAMPA** (about 51,000 measurements, 6,218 unique peptides after filtering). The data cell in the notebook converts GRAMPA's log10(µM) values into the format above. Please get the dataset from its authors and check its terms before redistributing it:
 
-> Witten J, Witten Z. *Deep learning regression model for antimicrobial peptide design.* bioRxiv (2019). https://doi.org/10.1101/692681
-
+> Witten J, Witten Z. *Deep learning regression model for antimicrobial peptide design.* bioRxiv (preprint, posted 12 July 2019). https://doi.org/10.1101/692681
+>
+> Dataset: https://github.com/zswitten/Antimicrobial-Peptides
 By default the notebook keeps modified peptides (for example C-terminal amidation) in the data. The data cell can drop them (`DROP_MODIFIED`) once you have looked at the modification columns in your copy.
 
 ## Results snapshot
