@@ -1,0 +1,38 @@
+AMP baseline report
+========================================
+training peptides: 5597  (generator trained on 3202 after family balancing, max 5 per cluster)
+generator: trained in this run; sampling seed 1; PyTorch deterministic mode on
+raw samples: 300000   unique: 293840 (97.9%)
+raw samples that exactly copy a TRAINING peptide (memorization): 2194 (0.7%)
+raw samples that exactly equal a HELD-OUT real peptide (rediscovery): 91 (0.0%)
+
+Gate survival:
+  valid (20 aa, length range): 300000
+  unique within generated pool: 293840
+  not an exact training peptide: 293454
+  Shannon entropy >= 2.0: 264992
+  no homopolymer/tandem repeats: 261367
+  internal 5-mer repeats <= 0.20: 261313
+  no cysteine: 189557
+  net charge >= +2: 150482
+  5-mer overlap with training <= 0.90 (near-copy gate): 148822
+
+library size: 50000
+library length mean/min/max: 19.9/8/50
+library mean net charge: 4.22
+library 5-mer overlap with training set: mean 0.295, median 0.259, 95th pct 0.714
+held-out REAL peptides (n=621) 5-mer overlap with training set: mean 0.715, median 0.848, 95th pct 1.000   <- baseline for 'normal' novelty
+held-out real peptides regenerated exactly by the model (raw pool): 18 of 621
+ranker: random forest on 4748 peptides with MIC for organism 'e. coli,escherichia coli' in 1065 similarity clusters. Held-out Spearman: random split 0.686, cluster split 0.571 (the cluster split is the honest one)
+top-100: chosen from the 5000 best-scored library peptides (length 8-30, net charge <= 8), max 3 per similarity cluster (k=3, thr=0.3), pairwise identity < 0.7 (difflib ratio, not true Levenshtein)
+known-peptide filter: excluded 304 of 5304 best-scored candidates whose nearest known peptide is >= 0.80 identical
+top-100: constraints satisfied without relaxing
+top-100 families (picks linked at identity >= 0.6): 67 families, largest has 10 picks, top 5 sizes [10, 10, 5, 4, 3]   [cap: max family size 10]
+top-100: 91 distinct clusters; nearest-known-peptide identity median 0.60, 0 picks >= 0.80 (close analogs of a known peptide; see top100.csv columns nearest_known / nearest_identity)
+
+Property comparison, mean (median):
+  training (all)        n=5597   length  20.3 (18)   charge  4.05 (4)   hydropathy -0.11 (-0.04)   moment  1.10 (1.07)
+  training (model input)n=3202   length  21.4 (19)   charge  3.73 (3)   hydropathy -0.09 (-0.03)   moment  1.03 (0.99)
+  held-out real         n=621    length  19.9 (18)   charge  3.86 (4)   hydropathy -0.08 (-0.03)   moment  1.11 (1.08)
+  generated library     n=50000  length  19.9 (18)   charge  4.22 (4)   hydropathy -0.16 (-0.09)   moment  1.29 (1.34)
+  (a library far from the real peptides on these is a sign it is not AMP-like)

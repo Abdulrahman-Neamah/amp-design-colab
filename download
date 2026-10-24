@@ -1,0 +1,21 @@
+# data: not redistributed here (check each database's terms of use)
+*.csv
+!examples/*.csv
+grampa*
+data/
+
+# run outputs and model weights
+amp_out/
+run_*/
+repro_*/
+train_*/
+*.pt
+*.zip
+library.fasta
+
+# python / notebooks
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.DS_Store
