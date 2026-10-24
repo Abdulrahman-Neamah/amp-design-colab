@@ -1,8 +1,8 @@
 # amp-design-colab
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR-USERNAME/amp-design-colab/blob/main/notebooks/amp_pipeline.ipynb)
-[![tests](https://github.com/YOUR-USERNAME/amp-design-colab/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR-USERNAME/amp-design-colab/actions)
-![license](https://img.shields.io/badge/license-MIT-blue)
+   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Abdulrahman-Neamah/amp-design-colab/blob/main/notebooks/amp_pipeline.ipynb)
+   [![tests](https://github.com/Abdulrahman-Neamah/amp-design-colab/actions/workflows/tests.yml/badge.svg)](https://github.com/Abdulrahman-Neamah/amp-design-colab/actions/workflows/tests.yml)
+   ![license](https://img.shields.io/badge/license-MIT-blue)
 
 A small, end-to-end pipeline for designing **antimicrobial peptides (AMPs)** with a generative model, built to run entirely in Google Colab.
 
